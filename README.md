@@ -1,6 +1,6 @@
-# Webpack Starter
+# React Drag n Drop Tutorial 
 
-Base template for react projects. Includes webpack, babel, and client / server architecture. 
+Create a Trello Dashboard clone in React.js. The code needed for this is super easy thanks to react-dnd!
 
 ## Installation
 
