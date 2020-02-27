@@ -107,6 +107,7 @@ select {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .col {
@@ -130,16 +131,18 @@ select {
 }
 
 .modal {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    padding: 20px;
     background-color: #F4F5F7;
+    border-radius: 2px;
+    margin: 48px 0 80px;
+    min-height: 450px;
+    width: 800px;
+    outline: none;
+    padding: 20px;
 }
 
 .overlay {
+    display: flex;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
