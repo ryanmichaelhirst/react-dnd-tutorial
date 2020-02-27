@@ -9,7 +9,9 @@ const DropWrapper = ({ onDrop, children, name }) => {
         canDrop: (item, monitor) => {
             const itemIndex = statusIcons.findIndex(si => si.status === item.status);
             const statusIndex = statusIcons.findIndex(si => si.status === name);
-            return statusIndex === itemIndex + 1 || statusIndex === itemIndex - 1;
+            return itemIndex === statusIndex ||
+                statusIndex === itemIndex + 1 ||
+                statusIndex === itemIndex - 1;
         },
         drop: (item, monitor) => {
             onDrop(item, monitor, name);
