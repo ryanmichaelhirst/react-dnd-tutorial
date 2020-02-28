@@ -3,18 +3,16 @@ import { useDrop } from "react-dnd";
 import ITEM_TYPE from "../data/types";
 import { statusIcons } from "../data";
 
-const DropWrapper = ({ onDrop, children, name }) => {
-    const [{ isOver, canDrop }, drop] = useDrop({
+const DropWrapper = ({ onDrop, children, status }) => {
+    const [{ isOver }, drop] = useDrop({
         accept: ITEM_TYPE,
         canDrop: (item, monitor) => {
             const itemIndex = statusIcons.findIndex(si => si.status === item.status);
-            const statusIndex = statusIcons.findIndex(si => si.status === name);
-            return itemIndex === statusIndex ||
-                statusIndex === itemIndex + 1 ||
-                statusIndex === itemIndex - 1;
+            const statusIndex = statusIcons.findIndex(si => si.status === status);
+            return [itemIndex + 1, itemIndex - 1, itemIndex].includes(statusIndex);
         },
         drop: (item, monitor) => {
-            onDrop(item, monitor, name);
+            onDrop(item, monitor, status);
         },
         collect: monitor => ({
             isOver: monitor.isOver(),
@@ -24,7 +22,7 @@ const DropWrapper = ({ onDrop, children, name }) => {
 
     return (
         <div ref={drop} className={"drop-wrapper"}>
-            {React.cloneElement(children, { isOver, canDrop })}
+            {React.cloneElement(children, { isOver })}
         </div>
     )
 };

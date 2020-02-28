@@ -33,7 +33,7 @@ const Homepage = () => {
                 return (
                     <div key={status} className={"col-wrapper"}>
                         <h2 className={"col-header"}>{status.toUpperCase()}</h2>
-                        <DropWrapper onDrop={onDrop} name={status}>
+                        <DropWrapper onDrop={onDrop} status={status}>
                             <Col>
                                 {items
                                     .filter(i => i.status === status)
