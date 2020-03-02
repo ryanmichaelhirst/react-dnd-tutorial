@@ -15,8 +15,7 @@ const DropWrapper = ({ onDrop, children, status }) => {
             onDrop(item, monitor, status);
         },
         collect: monitor => ({
-            isOver: monitor.isOver(),
-            canDrop: monitor.canDrop()
+            isOver: monitor.isOver()
         })
     });
 
