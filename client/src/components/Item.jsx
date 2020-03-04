@@ -3,7 +3,7 @@ import { useDrag, useDrop } from "react-dnd";
 import Window from "./Window";
 import ITEM_TYPE from "../data/types";
 
-const Item = ({ item, index, moveItem }) => {
+const Item = ({ item, index, moveItem, status }) => {
     const ref = useRef(null);
 
     const [, drop] = useDrop({
@@ -59,8 +59,9 @@ const Item = ({ item, index, moveItem }) => {
                 className={"item"}
                 onClick={onOpen}
             >
-                <p>{item.content}</p>
-                <p>{item.icon}</p>
+                <div className={"color-bar"} style={{ backgroundColor: status.color }}/>
+                <p className={"item-title"}>{item.content}</p>
+                <p className={"item-status"}>{item.icon}</p>
             </div>
             <Window
                 item={item}

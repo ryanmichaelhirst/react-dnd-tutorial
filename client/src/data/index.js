@@ -24,19 +24,23 @@ const data = [{
     content: "Finish reading Intro to UI/UX"
 }];
 
-const statusIcons = [{
+const statuses = [{
     status: "open",
-    icon: "⭕️"
+    icon: "⭕️",
+    color: "#EB5A46"
 }, {
     status: "in progress",
-    icon: "🔆️"
+    icon: "🔆️",
+    color: "#00C2E0"
 }, {
     status: "in review",
-    icon: "📝"
+    icon: "📝",
+    color: "#C377E0"
 }, {
     status: "done",
-    icon: "✅"
+    icon: "✅",
+    color: "#3981DE"
 }];
 
 
-export { data, statusIcons };
+export { data, statuses };

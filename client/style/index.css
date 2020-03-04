@@ -13,7 +13,7 @@ html {
 
 body {
     color: var(--text-color);
-    font-family: rubik,arial;
+    font-family: sans-serif;
     margin: 0;
 }
 
@@ -88,6 +88,22 @@ select {
 .item:hover {
     cursor: pointer;
 }
+
+.item-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.item-status {
+    text-align: right;
+}
+
+.color-bar {
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+}
+
 .drop-wrapper {
     flex: 1 25%;
     width: 100%;
